@@ -23,15 +23,12 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-item nav-link active" href="/">Home</a>
+          <a class="nav-item nav-link" href="<?= base_url('/siswa'); ?>">Daftar Siswa</a>
+          <a class="nav-item nav-link" href="<?= base_url('/guru'); ?>">Daftar Guru</a>
           <a class="nav-item nav-link" href="<?= base_url('/pages/about'); ?>">About</a>
           <a class="nav-item nav-link" href="<?= base_url('/komik'); ?>">Daftar Komik</a>
           <a class="nav-item nav-link" href="<?= base_url('/siswa'); ?>">Daftar Siswa</a>
-          <a class="nav-item nav-link" href="<?= base_url('/guru'); ?>"> Daftar Guru </a>
-          / <a class="nav-item nav-link" href="<?= base_url('/mapel'); ?>"> Daftar Mapel </a>
-          <a class="nav-item nav-link" href="<?= base_url('/barang'); ?>"> Master Barang </a>
-          <a class="nav-item nav-link" href="<?= base_url('/transaksi'); ?>"> Transaksi </a>
-          <a class="nav-item nav-link" href="<?= base_url('/pages/contact'); ?>">Contact</a>
-          <a class="nav-item nav-link" href="">Selamat Datang <?= session()->get('username'); ?></a>
+
           <a class="nav-item nav-link" href="/login/logout">Logout</a>
 
 
