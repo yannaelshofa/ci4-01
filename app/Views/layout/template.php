@@ -25,6 +25,7 @@
           <a class="nav-item nav-link" href="<?= base_url('/siswa'); ?>">Daftar Siswa</a>
           <a class="nav-item nav-link" href="<?= base_url('/guru'); ?>">Daftar Guru</a>
           <a class="nav-item nav-link" href="<?= base_url('/mapel'); ?>">Mapel</a>
+          <a class="nav-item nav-link" href="<?= base_url('/nilai'); ?>">Nilai</a>
           <a class="nav-item nav-link" href="<?= base_url('/pages/about'); ?>">About</a>
           <a class="nav-item nav-link" href="<?= base_url('/komik'); ?>">Daftar Komik</a>
           <a class="nav-item nav-link" href="<?= base_url('/siswa'); ?>">Daftar Siswa</a>

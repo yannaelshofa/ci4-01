@@ -13,6 +13,7 @@ class Siswa extends BaseController
   }
   public function index()
   {
+
     $data = [
       'title' => 'Data Siswa',
       'siswa' => $this->siswaModel->findAll()
