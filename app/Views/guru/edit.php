@@ -5,11 +5,11 @@
     <div class="col">
       <h3>Edit Data Guru</h3>
       <form action="/guru/update" method="POST">
-        <input type="hidden" name="id" value="<?= $guru['id']; ?>">
+        <input type="text" name="id" value="<?= $guru['id']; ?>">
         <div class="form-group row">
           <label for="nis" class="col-sm-2 col-form-label">Nip</label>
           <div class="col-sm-2">
-            <input type="text" class="form-control" id="nis" name="nis" value="<?= $guru['nip']; ?>">
+            <input type="text" class="form-control" id="nip" name="nip" value="<?= $guru['nip']; ?>">
           </div>
         </div>
         <div class="form-group row">
