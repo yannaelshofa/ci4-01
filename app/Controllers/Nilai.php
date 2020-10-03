@@ -3,13 +3,22 @@
 namespace App\Controllers;
 
 use App\Models\NilaiModel;
+use App\Models\SiswaModel;
+use App\Models\GuruModel;
+use App\Models\MapelModel;
 
 class Nilai extends BaseController
 {
   protected $nilaiModel;
+  protected $siswaModel;
+  protected $mapelModel;
+  protected $guruModel;
   public function __construct()
   {
     $this->nilaiModel = new NilaiModel();
+    $this->siswaModel = new SiswaModel();
+    $this->mapelModel = new MapelModel();
+    $this->guruModel = new GuruModel();
   }
   public function index()
   {
@@ -27,9 +36,13 @@ class Nilai extends BaseController
   public function create()
   {
     $data = [
-      'title' => 'Tambah data'
+      'title' => 'Tambah data',
+      'siswa' => $this->siswaModel->findAll(),
+      'mapel' => $this->mapelModel->findAll(),
+      'guru' => $this->guruModel->findAll()
     ];
-    return view('mapel/create', $data);
+    //dd($data);
+    return view('nilai/create', $data);
   }
 
   public function save()
