@@ -6,23 +6,39 @@
       <h3>Input Nilai</h3>
       <form action="/nilai/save" method="POST">
         <div class="form-group row">
-          <label for="nis" class="col-sm-2 col-form-label">Nis</label>
+          <label for="nama" class="col-sm-2 col-form-label">Nama</label>
           <div class="col-sm-2">
-            <select class="form-control" id="nis" name="nis">
-
+            <select class="form-control" id="idSiswa" name="idSiswa">
+              <?php foreach ($siswa as $s) : ?>
+                <option value="<?= $s['id']; ?>"><?= $s['nama']; ?></option>
+              <?php endforeach; ?>
             </select>
           </div>
         </div>
         <div class="form-group row">
-          <label for="nama" class="col-sm-2 col-form-label">Nama</label>
-          <div class="col-sm-4">
-            <input type="text" class="form-control" id="nama" name="nama">
+          <label for="Guru" class="col-sm-2 col-form-label">Guru</label>
+          <div class="col-sm-2">
+            <select class="form-control" id="idMapel" name="idMapel">
+              <?php foreach ($guru as $s) : ?>
+                <option value="<?= $s['id']; ?>"><?= $s['nama']; ?></option>
+              <?php endforeach; ?>
+            </select>
           </div>
         </div>
         <div class="form-group row">
-          <label for="foto" class="col-sm-2 col-form-label">Foto</label>
-          <div class="col-sm-4">
-            <input type="text" class="form-control" id="foto" name="foto">
+          <label for="foto" class="col-sm-2 col-form-label">Mapel</label>
+          <div class="col-sm-2">
+            <select class="form-control" id="idGuru" name="idMapel">
+              <?php foreach ($mapel as $s) : ?>
+                <option value="<?= $s['id']; ?>"><?= $s['namaMapel']; ?></option>
+              <?php endforeach; ?>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="foto" class="col-sm-2 col-form-label">Nilai</label>
+          <div class="col-sm-2">
+            <input type="text" class="form-control" name="nilai">
           </div>
         </div>
         <div class="form-group row">
