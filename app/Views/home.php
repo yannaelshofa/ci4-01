@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h1>Selamat Datang</h1>
+      <h1>Selamat Datang <?= session()->get('username'); ?></h1>
     </div>
   </div>
 </div>

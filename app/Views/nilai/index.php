@@ -27,8 +27,8 @@
               <td><?= $k['namaMapel']; ?></td>
               <td><?= $k['nilai']; ?></td>
               <td>
-                <a href="/guru/hapus/<?= $k['id']; ?>" class="btn btn-danger"> Hapus</a>
-                <a href="/guru/edit/<?= $k['id']; ?>" class="btn btn-warning"> Edit</a>
+                <a href="/nilai/hapus/<?= $k['id']; ?>" class="btn btn-danger"> Hapus</a>
+                <a href="/nilai/edit/<?= $k['id']; ?>" class="btn btn-warning"> Edit</a>
               </td>
             </tr>
           <?php endforeach; ?>

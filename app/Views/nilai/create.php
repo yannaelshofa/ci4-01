@@ -18,7 +18,7 @@
         <div class="form-group row">
           <label for="Guru" class="col-sm-2 col-form-label">Guru</label>
           <div class="col-sm-2">
-            <select class="form-control" id="idMapel" name="idMapel">
+            <select class="form-control" id="idGuru" name="idGuru">
               <?php foreach ($guru as $s) : ?>
                 <option value="<?= $s['id']; ?>"><?= $s['nama']; ?></option>
               <?php endforeach; ?>

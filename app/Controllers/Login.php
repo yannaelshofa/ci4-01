@@ -2,32 +2,25 @@
 
 namespace App\Controllers;
 
-use App\Models\NilaiModel;
-use App\Models\SiswaModel;
-use App\Models\GuruModel;
-use App\Models\MapelModel;
+use App\Models\LoginModel;
 
-class Nilai extends BaseController
+
+class Login extends BaseController
 {
-  protected $nilaiModel;
-  protected $siswaModel;
-  protected $mapelModel;
-  protected $guruModel;
+
+  protected $loginModel;
   public function __construct()
   {
-    $this->nilaiModel = new NilaiModel();
-    $this->siswaModel = new SiswaModel();
-    $this->mapelModel = new MapelModel();
-    $this->guruModel = new GuruModel();
+    $this->loginModel = new LoginModel();
   }
   public function index()
   {
     $data = [
       'title' => 'Data Nilai',
-      'siswa' => $this->nilaiModel->tampilView()
+
     ];
     // dd($data);
-    return view('nilai/index', $data);
+    return view('login/index');
   }
   public function yanna()
   {
@@ -63,9 +56,30 @@ class Nilai extends BaseController
     $this->nilaiModel->delete($id);
     return redirect()->to('/nilai');
   }
-  public function get_one($id)
+  public function prosesLogin()
   {
-    //return $this->siswaModel->where(['id' => $id])->first();
+
+    $password = $this->request->getVar('password');
+    $username = $this->request->getVar('username');
+
+    $cek = $this->loginModel->where(array('username' => $username, 'password' => $password))
+      ->get()->getResultArray();
+    //dd(count($cek));
+    if (count($cek) > 0) {
+      // echo $cek[0]['username'];
+      session()->set('username', $cek[0]['username']);
+      session()->set('password', $cek[0]['password']);
+      session()->set('level', $cek[0]['level']);
+      return redirect()->to('/');
+    } else {
+      session()->setFlashdata('gagal', 'User Name Passwaord Salah');
+      return redirect()->to('/login');
+    }
+  }
+  public function logout()
+  {
+    session()->destroy();
+    return redirect()->to('/login');
   }
   public function edit($id)
   {
